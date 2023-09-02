@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Christa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Happy Birthday</title>
     <style>
         body {
             display: flex;
@@ -30,16 +31,54 @@
         audio {
             width: 100%;
         }
+
+        #playButton {
+            width: 100px;
+            height: 100px;
+            background-color: transparent; /* Transparent background */
+            border: none; /* No border */
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease; /* Smooth hover effect */
+        }
+
+        #playButton:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        #playIcon {
+            font-size: 50px; /* Size of the play icon */
+            color: #ff0000; /* Icon color (YouTube red) */
+        }
     </style>
 </head>
 <body>
     <div id="content">
         <div id="firework-emoji">🎉</div>
         <h1>Happy Birthday</h1>
-        <audio controls autoplay loop>
-            <source src="happy_birthday.mp3" type="audio/mp3" id="birthdayAudio">
+        <button id="playButton">
+            <i id="playIcon" class="fas fa-play-circle"></i>
+        </button>
+        <audio id="birthdayAudio" loop>
+            <source src="happy_birthday.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
+    <script>
+        const playButton = document.getElementById('playButton');
+        const playIcon = document.getElementById('playIcon');
+        const audioElement = document.getElementById('birthdayAudio');
+
+        playButton.addEventListener('click', () => {
+            if (audioElement.paused) {
+                audioElement.play();
+                playIcon.classList.remove('fa-play-circle');
+                playIcon.classList.add('fa-pause-circle');
+            } else {
+                audioElement.pause();
+                playIcon.classList.remove('fa-pause-circle');
+                playIcon.classList.add('fa-play-circle');
+            }
+        });
+    </script>
 </body>
 </html>
