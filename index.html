@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Christa</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #firework-emoji {
+            font-size: 48px;
+        }
+
+        #content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="firework-emoji">🎉</div>
+        <h1>Happy Birthday</h1>
+        <audio controls autoplay loop>
+            <source src="happy_birthday.mp3" type="audio/mp3" id="birthdayAudio">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+</html>
